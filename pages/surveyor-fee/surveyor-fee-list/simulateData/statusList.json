@@ -1,0 +1,12 @@
+[
+  {
+    "id": "s",
+    "label": "Settle",
+    "value": "s"
+  },
+  {
+    "id": "u",
+    "label": "Unpaid",
+    "value": "u"
+  }
+]

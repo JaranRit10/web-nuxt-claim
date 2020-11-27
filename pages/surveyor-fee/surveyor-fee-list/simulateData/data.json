@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "surveyorId": "00001",
+      "surveyorType": "INH-BKK",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "500",
+      "subFee": "200",
+      "otherFee": "100",
+      "totalFee": "800",
+      "remarks": "(ระยะทางเพิ่มส่วนต่าง 12 กม.× 5 บาท)",
+      "status": "Settle"
+    },
+    {
+      "surveyorId": "00002",
+      "surveyorType": "INH-Upcountry",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "600",
+      "subFee": "250",
+      "otherFee": "50",
+      "totalFee": "900",
+      "remarks": "",
+      "status": "Settle"
+    },
+    {
+      "surveyorId": "00003",
+      "surveyorType": "Outsource Upcountry",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "500",
+      "subFee": "330",
+      "otherFee": "1000",
+      "totalFee": "1830",
+      "remarks": "ค่าเรียกร้องที่เกิดเหตุ 10 เปอร์เซ็น",
+      "status": "Settle"
+    }
+  ]
+}

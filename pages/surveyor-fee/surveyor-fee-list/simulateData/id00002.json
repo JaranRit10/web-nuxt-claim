@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "surveyorId": "00002",
+      "surveyorType": "2",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "600",
+      "subFee": "250",
+      "otherFee": "50",
+      "totalFee": "900",
+      "remarks": "",
+      "status": "s"
+    }
+  ]
+}

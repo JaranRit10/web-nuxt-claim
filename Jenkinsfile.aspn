@@ -1,0 +1,59 @@
+properties([
+    parameters([
+        string(name: 'APP1_BUILD_IMAGE_ENABLED', defaultValue: 'Y', description: 'Build web-nuxt UI'),
+        string(name: 'APP1_DEPLOY_ENABLED', defaultValue: 'Y', description: 'Deploy web-nuxt UI'),
+    ])
+])
+
+pipeline {
+    agent any
+
+    environment {
+        KUBE_CONFIG_FILE = '/app/tools/kube/k8s-v19-config'
+        KUBE_APP_NAMESPACE = 'kpidev'
+        KUBE_APP_SERVICE_TYPE = 'NodePort'
+        HELM_BIN_PATH = '/app/tools/helm3/helm'
+        HELM_RELEASE_NAME = 'kpidev-claim-web-nuxt'
+        HELM_CHART_NAME = 'kpi-claim-web-nuxt'
+        DOCKER_REGISTRY_URL = 'http://repo01.aspiron.co.th:8001'
+        DOCKER_REGISTRY_CREDENTIAL = 'docker-login'
+        DOCKER_IMAGE_NAME = 'kpi/claim-web-nuxt'
+        DOCKER_TAG_NAME = "${env.BUILD_NUMBER}"
+        DOCKER_BUILD_FILE = 'k8s/Dockerfile'
+    }
+
+    stages {
+        stage('Checkout scm') {
+            steps {
+                checkout scm
+                lastChanges since: 'LAST_SUCCESSFUL_BUILD', format: 'SIDE', matching: 'LINE'
+            }
+        }
+        stage('Build Docker Image'){
+            when {
+                expression { "${APP1_BUILD_IMAGE_ENABLED}" == 'Y' || ${APP1_DEPLOY_ENABLED} == 'Y' }
+            }
+            steps{
+                script {
+                    echo "Build ${env.JOB_NAME}: ${env.BUILD_NUMBER}"
+                    echo "Current: $PWD"
+                    docker.withRegistry("${DOCKER_REGISTRY_URL}","${DOCKER_REGISTRY_CREDENTIAL}"){
+				        def customImage = docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_TAG_NAME}","-f ${DOCKER_BUILD_FILE} .")
+				        customImage.push()
+			        }
+                }
+            }
+        }
+        stage('Deploy K8s'){
+            when {
+                expression { "${APP1_DEPLOY_ENABLED}" == 'Y' }
+            }
+            steps {
+                script {
+                    sh "${HELM_BIN_PATH} upgrade --install ${HELM_RELEASE_NAME} ./k8s/${HELM_CHART_NAME} --kubeconfig=${KUBE_CONFIG_FILE} --set=image.tag=${DOCKER_TAG_NAME} --set=replicaCount=1 --set=service.type=${KUBE_APP_SERVICE_TYPE} --namespace ${KUBE_APP_NAMESPACE} --set=fullnameOverride=${HELM_CHART_NAME}"
+                }
+
+            }
+        }
+    }
+}

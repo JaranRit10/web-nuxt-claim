@@ -1,0 +1,17 @@
+
+{
+  "data": [
+    {
+      "surveyorId": "00003",
+      "surveyorType": "3",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "500",
+      "subFee": "330",
+      "otherFee": "1000",
+      "totalFee": "1830",
+      "remarks": "ค่าเรียกร้องที่เกิดเหตุ 10 เปอร์เซ็น",
+      "status": "s"
+    }
+  ]
+}

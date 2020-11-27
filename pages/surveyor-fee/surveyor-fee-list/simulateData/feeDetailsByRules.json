@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "surveyorType": "Outsource-Upcountry",
+      "policyType": "Motor-MV",
+      "claimCriteriaType": "เคลมสด",
+      "motorMCType": "",
+      "location": "Bangkok",
+      "time": "00:00 - 24:00",
+      "vehicleType": "All",
+      "claimTimes": "1-999",
+      "expenseType": "Main",
+      "distance": "0-999",
+      "feeRate": "250 Baht",
+      "systemCalculationFee": "250"
+    },
+    {
+      "surveyorType": "Outsource-Upcountry",
+      "policyType": "Motor-MV",
+      "claimCriteriaType": "เคลมแห้ง",
+      "motorMCType": "",
+      "location": "Bangkok",
+      "time": "00:00 - 24:00",
+      "vehicleType": "All",
+      "claimTimes": "1-999",
+      "expenseType": "Main",
+      "distance": "0-999",
+      "feeRate": "250 Baht",
+      "systemCalculationFee": "250"
+    }
+  ]
+}

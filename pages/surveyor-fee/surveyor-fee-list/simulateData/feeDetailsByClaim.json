@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "claimNo": "CMV20201103-001",
+      "policyType": "Motor-MV",
+      "claimType": "เคลมสด",
+      "province": "Bangkok",
+      "district": "Bangkok",
+      "time": "22:00",
+      "vehicleType": "Car",
+      "claimTimes": "1",
+      "surveyorName": "Mr. Tawat Lee",
+      "mainFee": "250",
+      "subFee": "200",
+      "otherFee": "50",
+      "totalFee": "500"
+    },
+    {
+      "claimNo": "CMV20201103-002",
+      "policyType": "Motor-MV",
+      "claimType": "เคลมแห้ง",
+      "province": "Bangkok",
+      "district": "Bangkok",
+      "time": "22:00",
+      "vehicleType": "Motocycle",
+      "claimTimes": "1",
+      "surveyorName": "Mr. Tawat Lee",
+      "mainFee": "250",
+      "subFee": "200",
+      "otherFee": "50",
+      "totalFee": "500"
+    }
+  ]
+}

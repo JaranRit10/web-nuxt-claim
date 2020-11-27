@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "surveyorId": "00001",
+      "surveyorType": "1",
+      "surveyor": "กรุงเทพ เคลม",
+      "calculateDate": "1/11/2020",
+      "mainFee": "500",
+      "subFee": "200",
+      "otherFee": "100",
+      "totalFee": "800",
+      "remarks": "(ระยะทางเพิ่มส่วนต่าง 12 กม.× 5 บาท)",
+      "status": "s"
+    }
+  ]
+}
